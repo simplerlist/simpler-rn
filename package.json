@@ -4,7 +4,7 @@
 	"main": "node_modules/expo/AppEntry.js",
 	"scripts": {
 		"secrets": "doppler secrets download --no-file --format env > .env && eas secret:push --force --scope project --env-file ./.env",
-		"start": "yarn secrets && expo start",
+		"start": "expo start",
 		"android": "expo start --android",
 		"ios": "expo start --ios",
 		"web": "expo start --web"
