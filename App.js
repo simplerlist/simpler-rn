@@ -20,7 +20,7 @@ const App = () => {
 
 	return (
 		<View className='font-inter flex-1 justify-center items-center' onLayout={onLayoutRootView}>
-			<Text className='text-xl font-bold'>Open up App.js to start working on your app!</Text>
+			<Text className='text-xl'>Open up App.js to start working on your app!</Text>
 
 			<StatusBar style='auto' />
 		</View>
