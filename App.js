@@ -1,35 +1,15 @@
 // Packages
-import { useState, useEffect } from 'react'
 import { ClerkProvider } from '@clerk/clerk-expo'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import * as Font from 'expo-font'
 import * as SecureStore from 'expo-secure-store'
-import { StatusBar } from 'expo-status-bar'
+// Providers
+import { AppProvider } from './contexts/app'
 // Pages
 import Home from './src'
 
 const App = () => {
 	const Stack = createNativeStackNavigator()
-
-	const [fontsLoaded, setFontsLoaded] = useState(false)
-
-	useEffect(() => {
-		;(async () => {
-			await Font.loadAsync({
-				'Inter-Regular': require('./assets/fonts/Inter-Light.ttf'),
-				'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
-				'Inter-Regular': require('./assets/fonts/Inter-Medium.ttf'),
-				'Inter-Regular': require('./assets/fonts/Inter-SemiBold.ttf'),
-				'Inter-Regular': require('./assets/fonts/Inter-Bold.ttf'),
-				'Inter-Black': require('./assets/fonts/Inter-Black.ttf')
-			})
-
-			setFontsLoaded(true)
-		})()
-	}, [])
-
-	if (!fontsLoaded) return null
 
 	return (
 		<ClerkProvider
@@ -39,11 +19,13 @@ const App = () => {
 				saveToken: (key, value) => SecureStore.setItemAsync(key, value)
 			}}
 		>
-			<NavigationContainer>
-				<Stack.Navigator>
-					<Stack.Screen name='Home' component={Home} />
-				</Stack.Navigator>
-			</NavigationContainer>
+			<AppProvider>
+				<NavigationContainer>
+					<Stack.Navigator>
+						<Stack.Screen name='Home' component={Home} />
+					</Stack.Navigator>
+				</NavigationContainer>
+			</AppProvider>
 		</ClerkProvider>
 	)
 }

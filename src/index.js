@@ -8,7 +8,7 @@ const Home = () => {
 
 	return (
 		<View>
-			<Text className='font-inter font-black text-3xl'>Inter Black</Text>
+			<Text className='font-black text-3xl'>Inter Black</Text>
 		</View>
 	)
 }
