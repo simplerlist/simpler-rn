@@ -1,11 +1,16 @@
 // Packages
+import { useState, useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { useSignIn } from '@clerk/clerk-expo'
 
-const Pages = () => {
+const Home = () => {
 	const { signIn, setSession, isLoaded } = useSignIn()
 
-	return <Text className='text-3xl font-bold'>Sign in</Text>
+	return (
+		<View>
+			<Text className='font-inter font-black text-3xl'>Inter Black</Text>
+		</View>
+	)
 }
 
-export default Pages
+export default Home

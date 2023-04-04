@@ -4,7 +4,14 @@ module.exports = {
 	theme: {
 		extend: {},
 		fontFamily: {
-			inter: ['Inter']
+			inter: [
+				'Inter-Light',
+				'Inter-Regular',
+				'Inter-Medium',
+				'Inter-SemiBold',
+				'Inter-Bold',
+				'Inter-Black'
+			]
 		}
 	},
 	plugins: []
