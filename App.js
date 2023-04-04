@@ -7,6 +7,7 @@ import * as SecureStore from 'expo-secure-store'
 import { AppProvider } from './contexts/app'
 // Pages
 import Home from './src'
+import SignIn from './src/auth/SignIn'
 
 const App = () => {
 	const Stack = createNativeStackNavigator()
@@ -23,6 +24,7 @@ const App = () => {
 				<NavigationContainer>
 					<Stack.Navigator>
 						<Stack.Screen name='Home' component={Home} />
+						<Stack.Screen name='Sign In' component={SignIn} />
 					</Stack.Navigator>
 				</NavigationContainer>
 			</AppProvider>
